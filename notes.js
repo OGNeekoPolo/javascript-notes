@@ -5,48 +5,54 @@ let arr = [1,3,5,6,7,8]; // This is the standard method of creating an array.
 
 console.log(arr[2]); //Using the array index number of '2', you can find the third number in the array because all arrays start with an index of 0.
 
-let obj = {'thing' : 'stuff'}; // This is the standar way of creating an object with JavaScript.
+let obj = {'thing' : 'stuff'}; // This is the standard way of creating an object with JavaScript. 'thing' is considered a key, while 'stuff' is the value.
 
 console.log(obj); //By logging the variable 'obj', you will be able to see all of the different items in the object.
-console.log(obj.thing); //By using the variable name 'obj.' you can call the different parts of the object by the name. Hence obj.name.
+console.log(obj.thing); //By using the variable name 'obj.' you can call the different parts of the object by its key. Hence obj.name.
 
 
 //Using a variable name without let or var will completely
 //reassign the variable and will overwrite its previous assignment.
-obj = {'thing' : 'stuff', 'name' : 'Jon', 'age' : 27,}
+obj = {
+'thing' : 'stuff',
+'name' : 'Jon',
+'age' : 27
+};
 
 
 console.log(obj);
 console.log(obj['age']); //This is considered 'bracket notation', and is one of the methods of pulling information out of our objects.
 console.log(obj.name); // This is considered 'dot notation', and is the alternate way of pulling information from our objects.
 
-obj['multi-line'] = 'thing'; //If the header in the object is multi-worded, you can only call that information using bracket notation. Dot notation will not recognize a hyphonated word.
+obj['multi-line'] = 'thing'; //If the key in the object is multi-worded, you can only call that information using bracket notation. Dot notation will not recognize a hyphonated word.
 
 console.log(obj);
 
 
-//This is the extended way of writing out a complete object. Notice that the header 'address' has actually opened up to be another object.
-//Objects can be put inside of objects to make different branches and tiers.
+//This is the extended way of writing out a complete object. Notice that the key 'address' has actually
+//opened up to be another object; that object is considered the value of address.
 obj = {
   'name' : 'Jon',
   'address' : { //Address has been made into an object because there are different individual parts of the address (ie. city and street names)
     'city' : 'Indy',
     'street' : 'N. Deleware',
-  }, //When closing an object inside of an object, make sure that the closing bracket is followed by a comma in order to tell javascript that you are closing that item and moving on to other headers in your object.
+  }, //When closing an object inside of an object, make sure that the closing bracket is followed by a comma in order to tell javascript that you are closing that item and moving on to other keys in your object.
   'age' : 27,
   'position' : 'teacher'
 };
+//Objects can be put inside of objects to make different branches and tiers.
+
 
 console.log(obj);
 
 
 //Below will show you the method of creating arrays inside of objects.
 obj = {
- 'arr' : [1,2,3,4],
+ 'arr' : [1,2,3,4] //The array is considered the value of 'arr'
 }
 
 
-//In order to log the array, you must first call the name of the object, and then branch it to the header of the array (ie. obj.arr)
+//In order to log the array, you must first call the name of the object, and then branch it to the key of the array (ie. obj.arr)
 //Below are two separate ways to call the exact same thing.
 
 //Dot Notation
@@ -98,6 +104,8 @@ setTimeout(name, 2000);
 function name(){
   console.log("Cameron");
 }
+
+//Fetch Functions
 
 (function () {
 
@@ -172,6 +180,8 @@ function arrPlay(arr) {
 };
 
 arrPlay(arr);
+
+//Complex Functions
 
 function getSize(height, width, depth){
   const area = height * width;
